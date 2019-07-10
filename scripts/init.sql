@@ -24,4 +24,3 @@ disk_io INT4 NOT NULL,
 disk_available INT4 NOT NULL,
 CONSTRAINT host_usage_host_info_fk FOREIGN KEY(host_id) REFERENCES host_info(id)
 );
-
