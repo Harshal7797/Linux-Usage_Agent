@@ -12,19 +12,16 @@ get_cpu_idel(){
 	cpu_idel=$(sar -u  | head -5 | tail -1 | awk '{print $8}'| xargs)
 	echo "cpu_idel(%) =$cpu_idel"
 }
-
 get_cpu_kernel(){
 	cpu_kernel=$(sar -u | head -5 | tail -1 | awk '{print $5}' | xargs)
 	echo "Cpu_kernel(%)=$cpu_kernel"
 }
-
 get_host_id(){
  while read p
  do
  echo $p
  done < ~/host_id
 }
-
 get_disk_available(){
 	disk_available=$(df /home -BM | tail -1 | awk '{print $4}'| xargs | sed s'/M//')
 }
