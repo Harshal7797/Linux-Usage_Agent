@@ -53,7 +53,7 @@ get_L2_cache
 total_mem=$(cat /proc/meminfo | head -1 | awk '{print $2}' | xargs)
 timestamp=$(date "+%Y-%m-%d %T") 
 
-#spre 2: Construct Insert statement
+#step 2: Construct Insert statement
 insert_stmt=$(cat << END
 INSERT INTO host_info(hostname, cpu_number, cpu_architecture, cpu_model, cpu_mhz, l2_cache, total_mem, "timestamp") VALUES ('${hostname}',${cpu_number},'${cpu_architecture}','${cpu_model}',${cpu_mhz},${L2_cache},${total_mem},'${timestamp}');
 END
